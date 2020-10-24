@@ -2,7 +2,7 @@
 
 #include <memory>
 
-template <typename T> using sp = std::shared_ptr<T>;
+template <typename T> using SP = std::shared_ptr<T>;
 
 template <typename T> struct Deleter {
 
@@ -18,15 +18,15 @@ template <typename T> struct Deleter {
 
 
 
-sp<double> sp1;                      // empty shared pointer
+SP<double> sp1;                      // empty shared pointer
 
-sp<double> sp2 = nullptr;            // empty shared ptr for Nullptr
+SP<double> sp2 = nullptr;            // empty shared ptr for Nullptr
 
-sp<double> sp3(new double(148.143)); // ptr owning raw pointer
+SP<double> sp3(new double(148.143)); // ptr owning raw pointer
 
-sp<double> sp4 = sp3;                // share ownership with sp3;
+SP<double> sp4 = sp3;                // share ownership with sp3;
 
-sp<double> sp5 = sp4;                // share ownership with sp4 and sp3;
+SP<double> sp5 = sp4;                // share ownership with sp4 and sp3;
 
 
 
@@ -54,11 +54,11 @@ int main() {
 
   // Deleter as function object
 
-  sp<double> sp6(new double(148.413), Deleter<double>());
+  SP<double> sp6(new double(148.413), Deleter<double>());
 
   // Deleter as lambda Function
 
-  sp<double> sp7(new double(159.153), [](double *p) {
+  SP<double> sp7(new double(159.153), [](double *p) {
 
     std::cout << "bye from lambda function\n";
 
@@ -76,6 +76,6 @@ int main() {
 
   };
 
-  sp<double> sp8(new double(169.693), deleter);
+  SP<double> sp8(new double(169.693), deleter);
 
 }
