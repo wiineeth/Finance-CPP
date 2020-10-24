@@ -77,5 +77,7 @@ int main() {
   };
 
   SP<double> sp8(new double(169.693), deleter);
-
+//reseting shared pointers
+sp2.reset(new double(420));
+std::cout << "sp2 sole owner? " << std::boolalpha << sp2.unique() << '\n';
 }
