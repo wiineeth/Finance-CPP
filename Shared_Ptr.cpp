@@ -81,5 +81,6 @@ int main() {
 sp3.reset(new double(420.69));
 std::cout << "sp3 value " <<*sp3<<"\n";
 std::cout << "sp3 sole owner? " << std::boolalpha << sp3.unique() << '\n';
-
+sp2.reset(new double(3.1415), Deleter<double>());
+std::cout << "sp2 shared # " << sp2.use_count() << '\n';
 }
