@@ -29,7 +29,6 @@ int main() {
   std::cout << "ms: " << *ms << "\n"; // 43
 
 
-
   auto ms2 = std::make_shared<Point2d>(-1.0, 2.0);
 
   (*ms2).print(); //(-1,2)
